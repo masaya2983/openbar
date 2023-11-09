@@ -1,24 +1,23 @@
-# README
+# openbar
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+お酒のみのおすすめな飲みかたやカクテルなど紹介
+おすすめの酒
+DMやそういった機能を使用して飲み友達と遊ぶ特化サイト
 
-Things you may want to cover:
+### テーマを選んだ理由
+個人的に詳しくないためそういったもの詳細が知りたいと感じた
 
-* Ruby version
 
-* System dependencies
+### 主な利用シーン
 
-* Configuration
 
-* Database creation
+## 設計書
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
