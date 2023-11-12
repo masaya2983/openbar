@@ -6,4 +6,8 @@ class Publics::UsersController < ApplicationController
     @liquor = Game.new
   end
     
+  def index
+    @users = User.all
+    @liquor = Liquor.new
+  end
 end
