@@ -12,32 +12,32 @@ class Public::LiquorsController < ApplicationController
   end
   
   def index
-    @liqors = Liquor.all
-   
-   if params[:latest]
-    @liqors = Liqour.latest.page(params[:page]).per(10)
-   elsif params[:old].present?
-     @liqors = Liqour.old.page(params[:page]).per(10)
-   else
-     @liqors = Liquor.all.page(params[:page]).per(10)
-   end
+      @liqors = Liquor.all
+     
+     if params[:latest]
+      @liqors = Liqour.latest.page(params[:page]).per(10)
+     elsif params[:old].present?
+       @liqors = Liqour.old.page(params[:page]).per(10)
+     else
+       @liqors = Liquor.all.page(params[:page]).per(10)
+     end
   end
   
   def create
     @liquor = Liquor.new(liquor_params)
     @liquor.user_id = current_user.id
     
-  if @liquor.save
-    redirect_to @liquor
-    flash[:notice] ="更新完了"
-  else
-    @liquors = Liquor.all
-    render 'new'
-  end
+    if @liquor.save
+      redirect_to @liquor
+      flash[:notice] ="更新完了"
+    else
+      @liquors = Liquor.all
+      render 'new'
+    end
   end
   
   def new
-    @liquor =Liquor.new
+    @liquor = Liquor.new
   end
   
   def edit
