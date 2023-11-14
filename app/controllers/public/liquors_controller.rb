@@ -68,4 +68,11 @@ class Public::LiquorsController < ApplicationController
   
   private
   
+  def set_liquor
+    @liqor = Liquor.find(params[:id])
+  end
+  
+  def liquore_params
+   params.require(:liquore).permit(:name,:content,:image,:status, :review, :star, :category_id)#,:category_id)
+  end
 end
