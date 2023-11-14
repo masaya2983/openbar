@@ -41,6 +41,31 @@ class Public::LiquorsController < ApplicationController
   end
   
   def edit
-    
+     @liquor == Liquor.find(params[:id])
+     if @liquor.user == current_user
+      render "edit"
+     else
+        redirect_to liquors_path
+     end
   end
+  
+  def update
+       @liquor == Liquor.find(params[:id])
+    if @liquor.update(liquor_params)
+      redirect_to liquor_path(@liquor)
+      flash[:notice] ="更新完了"
+    else
+    @liqors = Liquor.all
+    render "edit"
+    end  
+  end
+  
+  def destroy
+    @liquor = Liquor.find(params[:id])
+    @liquor.destroy
+    redirect_to liquors_path
+  end
+  
+  private
+  
 end
