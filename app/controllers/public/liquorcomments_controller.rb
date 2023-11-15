@@ -11,4 +11,15 @@ class Public::LiquorcommentsController < ApplicationController
      end
   end
   
+  def destroy
+    @liquorcomment = Comment.find(params[:id])
+    @liquorcomment.destroy
+    redirect_to @liquorcomment.liquor
+  end
+  
+  private
+  
+  def comment_params
+    params.require(:liquorcomment).permit(:liquorcomment, :liquor_id)
+  end
 end
