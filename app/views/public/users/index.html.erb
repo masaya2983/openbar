@@ -8,6 +8,7 @@
       <h2>Users</h2>
       <%= render 'public/users/index',users: @users %>
        <%= link_to "TOP",user_path(current_user),class:"btn btn-primary" %>
+       <%= link_to "お酒の飲み方一覧へ",liquors_path, class:"btn btn-primary" %>
     </div>
   </div>
 </div>

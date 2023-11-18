@@ -1,0 +1,18 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <table class='table'>
+    <%= render 'public/users/info', user: current_user %>
+    <br>
+    <br>
+    <ul class="navbar-nav ml-auto">
+     <li><%= link_to "ユーザー一覧へ", users_path, class:"btn btn-primary" %></li>
+    <br>
+    <li><%= link_to "ゲーム一覧へ", liquors_path, class:"btn btn-primary" %></li>
+    <br>
+    <li><%= link_to"新規投稿", new_liquor_path, class:"btn btn-primary"  %></li>
+    </ul>
+    </div>
+    </div>
+  </div>
+</div>
