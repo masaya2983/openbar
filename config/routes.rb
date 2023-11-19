@@ -26,10 +26,13 @@ Rails.application.routes.draw do
    root :to => "homes#top"
    get "home/about"=>"homes#about"
   resources :users, only: [:index,:show,:edit,:update] do
+   get "check" => "customers#check"
+    patch "withdrawal" => "customers#withdrawal"
      resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end
+  
 
   get "search" => "searches#search"
   resources :liquors, only: [:index,:create,:show,:update,:destroy,:edit,:new] do
