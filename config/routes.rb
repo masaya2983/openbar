@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   get "search" => "searches#search"
   resources :liquors, only: [:index,:create,:show,:update,:destroy,:edit,:new] do
-    resource :favorites, only:[:create,:destroy]
+  resource :favorites, only:[:create,:destroy]
 
   end
 
