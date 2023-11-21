@@ -1,0 +1,22 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+
+      <th></th>
+      <th>投稿日</th>
+       <th>ジャンル</th>
+      <th>タイトル <th>
+      <th></th>
+      <th colspan="2"></th>
+     </tr>
+  </thead>
+  <tbody>
+    <% liquor.each do |liquor| %>
+    <tr>
+      <td><%= link_to(liquor.user) do %>
+          <%= image_tag liquor.user.get_profile_image, size:'50x50' %>
+          <% end %>
+        
+      </td>
+    </tr>
+  </tbody>
