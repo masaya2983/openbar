@@ -1,0 +1,59 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h4>liquor-title</h4>
+      <div>
+        <%= @liquor.title %>
+      </div>
+      <div>
+        <small>
+          <%= @liquor.category.name %>
+        </small>
+      </div>
+
+    </div>
+    <div class='col-md-11 '>
+      <table class=table>
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>カテゴリー名</th>
+            <th>ゲームタイトル</th>
+            <th>レビュー</th>
+
+
+            <th colspan=2></th>
+          </tr>
+        </thead>
+        <tr>
+          <td>
+            <%= link_to(@liquor.user) do %>
+              <%= image_tag @liquor.user.get_profile_image, size:"100x100" %><br>
+              <%= @liquor.user.name %>
+            <% end %>
+          </td>
+          <td> <%= @liquor.category.name %></td>
+          <td><%= link_to @liquor.title %></td>
+          <td><%= @liquor.review %></td>
+          <td> <%= render "public/games/static.rate", gliquor: @liquor %></td>
+          </tr>
+        
+       　 <tr>
+          <% if @liquor.user == current_user %>
+            <th><%= link_to '編集',edit_liquor_path(@liquor), class: "btn btn-sm btn-success edit_game_#{@liquor.id}" %></td>
+            <td><%= link_to '削除', @liquor, method: :delete, data: { confirm: '本当に消しますか？'}, class: "btn btn-sm btn-danger" %></td>
+          <% end %>
+        </tr>
+      </table>
+       
+      <div class="comments-index">
+        comments
+        <%= render "public/comments/index", liquor: @liquor %>
+      </div>
+      <%= paginate @liquorcomments %>
+      <%= render "public/comments/form", liquor: @liquor, comment: @liquorcomment %>
+      <%= link_to "戻る", liquors_path, class:"btn btn-primary" %>
+      <%= link_to "TOP",user_path(current_user),class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>
