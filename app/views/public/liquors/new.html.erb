@@ -1,0 +1,11 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <%= render 'public/liquors/form', liquor: @liquor %>
+      <%= link_to "ユーザー一覧へ", users_path, class:"btn btn-primary" %>
+      <%= link_to "ゲーム一覧へ", liquors_path, class:"btn btn-primary" %>
+      <%= link_to "TOPページへ",user_path(current_user),class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>
+    
