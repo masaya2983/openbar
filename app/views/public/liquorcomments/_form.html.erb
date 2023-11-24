@@ -1,5 +1,5 @@
 <%= form_with(model: comment, local: true) do |f| %>
-  <%= f.hidden_field :game_id, value: game.id %>
+  <%= f.hidden_field :liquor_id, value: liquor.id %>
   <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", class:"w-100 comment-textarea" %>
   <%= f.submit "送信する",class: "btnbtn-lg btn-base-1 mt-20 pull-right" %>
 <% end %>
