@@ -1,0 +1,84 @@
+<header>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+   <a class="navbar-brand" href="/"><span>Gameclub</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <ul class="navbar-nav ml-auto">
+         <% if user_signed_in? %>
+          <li>
+             <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
+               <i class="fas fa-home"></i> Home
+             <% end %>
+           </li>
+          <li>
+           <%=  link_to users_path,class: 'nav-link text-light' do %>
+            <i class="fas fa-users"></i> Users
+          <% end %>
+         </li>
+         <li>
+           <%=  link_to liquors_path,class: 'nav-link text-light' do %>
+             <i class="fas fa-gamepad"></i> Games
+           <% end %>
+        </li>
+        <li>
+          <%= link_to new_game_path, class: 'nav-link text-light' do %>
+          <i class="fas fa-plus"></i> 新規投稿
+           <% end %>
+        </li>
+         <li>
+            <%= link_to home_about_path,class: 'nav-link text-light' do %>
+              <i class="fas fa-link"></i> About
+            <% end %>
+          </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do %>
+            <i class="fas fa-sign-out-alt"></i> logout
+            <% end %>
+        </li>
+        <!--管理者がログインしていた場合-->
+        <% elsif admin_signed_in? %>
+          <li>
+           <%=  link_to admin_users_path,class: 'nav-link text-light' do %>
+            <i class="fas fa-users"></i> Users
+          <% end %>
+         </li>
+         <li>
+           <%=  link_to admin_liquors_path ,class: 'nav-link text-light' do %>
+             <i class="fas fa-gamepad"></i> Games
+           <% end %>
+        </li>
+          <li>
+            <%= link_to destroy_admin_session_path, method: :delete,class: 'nav-link text-light' do %>
+              <i class="fas fa-sign-out-alt"></i> logout
+            <% end %>
+          </li>
+        <% else %>
+         <li>
+            <%= link_to root_path,class: 'nav-link text-light' do %>
+              <i class="fas fa-home"></i> Home
+            <% end %>
+          </li>
+          <li>
+            <%= link_to home_about_path,class: 'nav-link text-light' do %>
+              <i class="fas fa-link"></i> About
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_registration_path,class: 'nav-link text-light' do %>
+              <i class="fas fa-user-plus"></i> 新規登録
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path ,class: 'nav-link text-light' do %>
+              <i class="fas fa-sign-in-alt"></i> login
+            <% end %>
+          </li>
+
+        <% end %>
+      </ul>
+      </div>
+    </div>
+  </nav>
+</header>
