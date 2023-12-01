@@ -1,0 +1,11 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <%= render 'public/appetizers/form', bar: @bar %>
+      <%= link_to "ユーザー一覧へ", users_path, class:"btn btn-primary" %>
+      <%= link_to "おつまみ一覧へ", bars_path, class:"btn btn-primary" %>
+      <%= link_to "TOPページへ",user_path(current_user),class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>
+    
