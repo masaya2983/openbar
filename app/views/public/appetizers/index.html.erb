@@ -9,8 +9,8 @@
    </div>
    <div class='col-md-9'>
     <h2>ゲームレビュー</h2>
-    <%= link_to '新しい順', liquors_path(latest: "true") %>
-    <%= link_to '古い順', liquors_path(old: "true") %>
+    <%= link_to '新しい順', appetizers_path(latest: "true") %>
+    <%= link_to '古い順', appetizers_path(old: "true") %>
    
     <%= render 'public/appetizers/index', appetizer: @appetizers%>
 
