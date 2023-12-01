@@ -17,7 +17,7 @@
           <%= image_tag liquor.user.get_profile_image, size:'50x50' %>
           <% end %>
       </td>
-      <td><%= render "public/comments/counter", liquor: liquor %></td>
+      <td><%= render "public/liquorcomments/counter", liquor: liquor %></td>
         <td><%= link_to "show", liquor, class: "btn btn-success",data: {"turbolinks"=>false}   %></td>
    　 </tr>
    <% end %>
