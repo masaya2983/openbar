@@ -1,0 +1,20 @@
+<%= flash[:notice] %>
+  <%= form_with model:@bar do|f|%>
+  <% if @bar.errors.any? %>
+   <%= @bar.errors.count %>errors prohibited this book from being saved
+  <div id="error_explanation">
+     <% @bar.errors.full_messages.each do|message| %>
+      <li><%= message %></li>
+    <% end %>
+   </ul>
+    </div>
+  <% end %>
+<% end %>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h2></h2>
+      <%= render 'form', bar: @bar %>
+    </div>
+  </div>
+</div>
