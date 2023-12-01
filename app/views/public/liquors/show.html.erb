@@ -51,7 +51,7 @@
         <%= render "public/comments/index", liquor: @liquor %>
       </div>
       <%= paginate @liquorcomments %>
-      <%= render "public/comments/form", liquor: @liquor, comment: @liquorcomment %>
+      <%= render "public/liquorcomments/form", liquor: @liquor, comment: @liquorcomment %>
       <%= link_to "戻る", liquors_path, class:"btn btn-primary" %>
       <%= link_to "TOP",user_path(current_user),class:"btn btn-primary" %>
     </div>
