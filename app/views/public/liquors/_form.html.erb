@@ -1,16 +1,4 @@
 <%= form_with model: liquor, local:true do |f|%>
-<div class="form-group">
-<%= f.label(:pubulic, for: nil, class: 'game-status_label' )do %>
- <%= f.radio_button :status, :public %>
- <%= I18n.t('activerecord.attributes.game.statuses.public') %>
- <% end %>
-</div>
-<div class="form-group">
- <%= f.label(:private,for: nil, class:'post-status_label')do %>
-  <%= f.radio_button :status, :private %>
-   <%= I18n.t('activerecord.attributes.game.statuses.private') %>
-  <% end %>
-  </div>
   <div class="form-group">
   <%= f.label :genre_id,"カテゴリー"%>
   <%= f.collection_select :genres_id, Category.all, :id, :name, { include_blank: true }, { class: "form-control" } %>

@@ -67,6 +67,6 @@ class Public::AppetizersController < ApplicationController
   end
   
   def appetizer_params
-   params.require(:liquore).permit(:name,:content,:image,:status, :body, :category_id)#,:category_id)
+   params.require(:liquore).permit(:name,:content,:image,:status, :body, :category_id)
   end
 end
