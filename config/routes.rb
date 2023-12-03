@@ -43,7 +43,9 @@ resources :rooms, only: [:create,:show]
 
   resources :comments, only: [:create,:destroy]
 
-
+  resources :groups, only:  [:new, :index, :show, :create, :edit, :update] do
+  resource :group_users, only: [:create, :destroy]
+  end
 
   get "category" => "categories#search"
  end
